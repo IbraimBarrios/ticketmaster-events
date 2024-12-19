@@ -1,11 +1,12 @@
-import { useState } from 'react';
-import Navbar from './components/Navbar';
-import Events from './components/Events';
-import './App.css'
-import SignupForm from './components/SignupForm';
+import { useRef, useState } from "react";
+import Navbar from "./components/Navbar";
+import Events from "./components/Events";
+import "./App.css";
+import SignupForm from "./components/SignupForm";
 
 function App() {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
+  const containerRef = useRef();
 
   const handleNavbarSearch = (word) => {
     setSearchTerm(word);
@@ -15,10 +16,10 @@ function App() {
     <>
       <SignupForm />
 
-      <Navbar onSearch={handleNavbarSearch}/>
-      <Events searchTerm={searchTerm}/>
+      <Navbar onSearch={handleNavbarSearch} ref={containerRef} />
+      <Events searchTerm={searchTerm} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
