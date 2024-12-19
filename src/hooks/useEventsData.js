@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useRef } from "react";
 import eventsJSON from "../data/events.json";
 
 const useEventData = () => {
-  const [data] = useState(eventsJSON);
+  const data = useRef(eventsJSON);
   const {
     _embedded: { events },
-  } = data;
+  } = data.current;
 
   return {
     events,
