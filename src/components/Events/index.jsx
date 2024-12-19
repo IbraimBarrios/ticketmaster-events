@@ -1,12 +1,8 @@
 import EventItem from "./components/EventItem";
-import dataJSON from "../../data/events.json";
-import { useState } from "react";
+import useEventData from "../../hooks/useEventsData";
 
 const Events = ({ searchTerm }) => {
-  const [data] = useState(dataJSON);
-  const {
-    _embedded: { events },
-  } = data;
+  const {events} = useEventData();
 
   const handleEventItemClick = (id) => {
     console.log("ticket: " + id);
