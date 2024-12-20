@@ -10,7 +10,7 @@ const router = createBrowserRouter([
     errorElement: <Error404 />,
   },
   {
-    path: "detail",
+    path: "detail/:eventId",
     element: <Detail />,
   },
 ]);
