@@ -1,22 +1,22 @@
-.event-item-container {
+.eventItemContainer {
   display: flex;
   margin: 24px 0px;
   align-items: start;
 }
 
-.event-info-container {
+.eventInfoContainer {
   display: flex;
   flex-direction: column;
   align-items: start;
   margin-left: 14px;
 }
 
-.event-name {
+.eventName {
   margin: 0;
   font-size: 22px;
 }
 
-.event-info {
+.eventInfo {
   margin: 0;
   text-align: left;
   /* texto con 3 puntitos en el parrafo*/
@@ -28,6 +28,6 @@
   /* texto con 3 puntitos en el parrafo*/
 }
 
-.see-more-btn {
+.seeMoreBtn {
   margin-top: 8px;
 }
