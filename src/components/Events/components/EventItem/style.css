@@ -1,0 +1,33 @@
+.event-item-container {
+  display: flex;
+  margin: 24px 0px;
+  align-items: start;
+}
+
+.event-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-left: 14px;
+}
+
+.event-name {
+  margin: 0;
+  font-size: 22px;
+}
+
+.event-info {
+  margin: 0;
+  text-align: left;
+  /* texto con 3 puntitos en el parrafo*/
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  /* texto con 3 puntitos en el parrafo*/
+}
+
+.see-more-btn {
+  margin-top: 8px;
+}
