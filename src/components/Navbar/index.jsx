@@ -22,9 +22,9 @@ const Navbar = forwardRef(({ onSearch }, ref) => {
   //   console.log("onSearch Cambio...");
   // }, [onSearch]);
 
-  useImperativeHandle(ref, ()=> ({
+  useImperativeHandle(ref, () => ({
     search,
-    setSearch
+    setSearch,
   }));
 
   const handleInputChange = (evt) => {
@@ -38,14 +38,39 @@ const Navbar = forwardRef(({ onSearch }, ref) => {
   };
 
   return (
-    <div ref={ref}>
-      <p>Mi boletera</p>
-      <input
-        value={search}
-        placeholder="Busca tu evento"
-        onChange={handleInputChange}
-        onKeyDown={handleInputKeyDown}
-      />
+    <div
+      ref={ref}
+      style={{
+        marginBottom: "15px",
+        width: "100%",
+        display: "flex",
+      }}
+    >
+      <div style={{ flex: 1, display: "flex" }}>
+        <p style={{ fontSize: 24, fontWeight: "bold" }}>Mi boletera</p>
+      </div>
+      <div
+        style={{
+          flex: 1,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-end",
+        }}
+      >
+        <input
+          value={search}
+          placeholder="Busca tu evento"
+          onChange={handleInputChange}
+          onKeyDown={handleInputKeyDown}
+          style={{
+            fontSize: 16,
+            padding: "6px 12px",
+            borderRadius: 4,
+            border: "none",
+            width: 200,
+          }}
+        />
+      </div>
     </div>
   );
 });
