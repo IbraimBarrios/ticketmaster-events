@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const useEventData = () => {
   const [data, setData] = useState({});
@@ -24,6 +24,7 @@ const useEventData = () => {
 
   return {
     events: data?._embedded?.events,
+    page: data?.page || {},
     isLoading,
     error,
     fetchEvents,
