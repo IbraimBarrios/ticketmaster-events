@@ -11,11 +11,13 @@ const Detail = () => {
   const [error, setError] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
+  const tiketMasterApiKey = import.meta.env?.VITE_TIKETMASTER_API_KEY;
+
   useEffect(() => {
     const fetchEventData = async () => {
       try {
         const response = await fetch(
-          `https://app.ticketmaster.com/discovery/v2/events/${eventId}?apikey=2A4wkCl2OldOqGGbJ7nv8UlBBIMYS0G8`
+          `https://app.ticketmaster.com/discovery/v2/events/${eventId}?apikey=${tiketMasterApiKey}`
         );
         const data = await response.json();
 
@@ -69,7 +71,10 @@ const Detail = () => {
           {eventData.priceRanges?.[0].max} {eventData.priceRanges?.[0].currency}
         </p>
       </div>
-      <a href={eventData.url} target="_black"> Ir por tu boleto</a>
+      <a href={eventData.url} target="_black">
+        {" "}
+        Ir por tu boleto
+      </a>
     </div>
   );
 };
