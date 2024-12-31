@@ -9,7 +9,7 @@ const Events = ({ searchTerm, events }) => {
     navigate(`/detail/${id}`);
   };
 
-  console.log("---->2");
+  console.log("memo");
 
   const renderEvents = () => {
     let eventsFiltered = events;
