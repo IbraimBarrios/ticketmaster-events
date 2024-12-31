@@ -9,6 +9,9 @@ import style from "./Home.module.css";
 
 const Home = () => {
   const { data, error, isLoading, fetchEvents } = useEventsResults();
+
+  const [isToggle, setIsToggle] = useState(false);
+
   const events = data?._embedded?.events || [];
   const page = data?.page || {};
 
@@ -39,6 +42,9 @@ const Home = () => {
 
     return (
       <div>
+        <button onClick={() => setIsToggle(!isToggle)}>
+          {isToggle ? "ON" : "OFF"}
+        </button>
         <Events searchTerm={searchTerm} events={events} />
         <ReactPaginate
           className={style.paginate}
