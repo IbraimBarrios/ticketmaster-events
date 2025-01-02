@@ -20,9 +20,12 @@ const Home = () => {
 
   const [searchTerm, setSearchTerm] = useState("");
   const containerRef = useRef();
+  // Ejemplo para utilizar una referencia cuando solo se desea que se re-renderee una vez en useEffect.
+  const fetchMyEventsRef = useRef();
+  fetchMyEventsRef.current = fetchEvents;
 
   useEffect(() => {
-    fetchEvents();
+    fetchMyEventsRef.current();
   }, []);
 
   const handleNavbarSearch = (word) => {
