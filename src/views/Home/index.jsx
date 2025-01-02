@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect, useCallback, useMemo } from "react";
 import ReactPaginate from "react-paginate";
 
 import Navbar from "../../components/Navbar";
@@ -12,8 +12,11 @@ const Home = () => {
 
   const [isToggle, setIsToggle] = useState(false);
 
-  const events = data?._embedded?.events || [];
-  const page = data?.page || {};
+  const events = useMemo(
+    () => data?._embedded?.events || [],
+    [data?._embedded?.events]
+  );
+  const page = useMemo(() => data?.page || {}, [data?.page]);
 
   const [searchTerm, setSearchTerm] = useState("");
   const containerRef = useRef();
